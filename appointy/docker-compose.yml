@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  db:
+    image: 'postgres:latest'
+    volumes:
+      - 'db_data:/var/lib/postgresql/data'
+    restart: always
+    ports:
+      - '56789:56789'
+    environment:
+      POSTGRES_PASSWORD: defaultpassword
+      POSTGRES_USER: defaultuser
+      POSTGRES_DB: saastack
+volumes:
+  db_data: {}
+

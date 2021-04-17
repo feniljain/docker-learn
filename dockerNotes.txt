@@ -1,0 +1,75 @@
+
+
+
+
+
+
+>>docker ps : Get information about all currently running containers.
+
+>>docker exec -it <container-id> sh : Shell access inside container(Gives access when docker container is already running).
+
+>>docker run <imageName> : Run a docker image.
+
+>>docker run -it <container-id> sh : Shell access inside container(Gives shell access when container starts for the first time i.e. to an empty container).
+
+>>docker build . : Build a docker file
+
+>>docker logs
+
+>> docker stop {container-id}: Stop a running docker container
+
+>>docker build -t {(docker-id)/(repo/projectName):(Version)} . : To give your custom image a name
+Example: docker build -t something/redis:latest . (Don't forget the full stop at the last, it is still compulsary).
+
+>> docker system prune -a: Remove all stopped containers, unused networks, etc.(Have a look at info by running the command itself)
+
+>>docker commit -c 'CMD ["-----"]' <container-id> : Make image from a container.
+
+>>COPY ./(current working directory) ./(working directory inside the container)
+
+>>Port Forwarding : docker run -p {portNoOnPC} : {portNoOnContainer} <image name>
+
+>>WORKDIR /---/--- : Specify the working directory of the container.
+
+>>docker-compose up : 
+
+>>docker-compose up --build : Rebuild the container
+
+>>docker-compose up -d : Launch in background
+
+>>docker-compose down : Stop containers
+
+>>rebuild: 'no', always, on-failure, unless-stopped >> rebuild policies, 'no' should be written in same way because it is a keyword in yaml.
+
+>>docker build -f custom-file-name . : To run docker build with custom-file-name. Do not forget the full stop.
+
+>>docker attach containerID
+
+>>docker attach command only attaches itself to the primary process.
+
+>>kubectl get pods/services: Get all the currently running pods/services
+
+>>kubectl apply -f {filename}: Give the config file to kubectl
+
+>>kubectl describe {object-type} {object-name}: Get detailed info about a specific object
+
+>>kubectl delete -f {filename}: Remove an object
+
+>> minikube start: Start the minikube service
+
+>> minikube ip: To get the ip address where out kubernetes cluster is running
+
+>> kubectl get {object-type} -o wide
+
+>>kubectl set image {object-type}/{object-name} {container-name} = {new-image-to-use}
+
+>>kubectl logs {pod-name}: Get the logs from the docker container
+
+>>kubectl exec -it {pod-name} sh: Get shell access inside a pod
+
+>> kubectl create secret {type-of-secret(options: generic, docker-registry, tls)} <secret-name> --from-literal key=value
+
+Connecting to docker server inside minkube:
+> eval $(minikube docker-env)
+
+abhi24783589
